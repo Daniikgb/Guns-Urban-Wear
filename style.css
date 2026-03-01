@@ -14,10 +14,16 @@
     --container: 1400px;
 }
 
+html {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    max-width: 100%;
 }
 
 body {
@@ -26,6 +32,7 @@ body {
     font-family: 'Outfit', sans-serif;
     line-height: 1.4;
     overflow-x: hidden;
+    max-width: 100%;
 }
 
 a {
