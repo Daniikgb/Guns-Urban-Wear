@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gun's Urban Wear | Modern Streetwear</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <!-- Overlay & Modals -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-overlay" id="contactOverlay"></div>
+
+    <div class="cart-drawer" id="cartDrawer">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 30px;">
+            <h2 class="logo">Tu Carrito</h2>
+            <span id="closeCart" style="cursor: pointer; opacity: 0.6; font-weight: 700;">CERRAR</span>
+        </div>
+        <div id="cartItemsList" style="flex: 1; overflow-y: auto;">
+            <p style="text-align: center; color: var(--text-secondary); margin-top: 50px;">Cargando productos...</p>
+        </div>
+        <div style="margin-top: 30px; border-top: 1px solid #333; padding-top: 30px;">
+            <div
+                style="display: flex; justify-content: space-between; margin-bottom: 20px; font-size: 1.2rem; font-weight: 800;">
+                <span>TOTAL</span>
+                <span id="cartTotalText">Gs. 0</span>
+            </div>
+            <button class="btn-black" id="checkoutBtn"
+                style="width: 100%; justify-content: center; background: #fff; color: #000;">Finalizar Pedido
+                (WhatsApp)</button>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div class="contact-modal" id="contactModal">
+        <h3 style="margin-bottom: 30px; font-weight: 800; font-size: 1.5rem;">Nuestras Redes</h3>
+        <ul style="display: flex; flex-direction: column; gap: 15px;">
+            <li><a href="https://www.instagram.com/gunsjeanspy/" target="_blank"
+                    style="display: flex; align-items: center; gap: 15px; padding: 15px; background: #111; border-radius: 12px;"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Instagram_logo_2016.svg" width="24">
+                    Instagram</a></li>
+            <li><a href="https://www.facebook.com/gunsjeanspy/" target="_blank"
+                    style="display: flex; align-items: center; gap: 15px; padding: 15px; background: #111; border-radius: 12px;"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+                        width="24"> Facebook</a></li>
+            <li><a href="https://wa.me/595984849863" target="_blank"
+                    style="display: flex; align-items: center; gap: 15px; padding: 15px; background: #111; border-radius: 12px;"><img
+                        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" width="24"> WhatsApp</a>
+            </li>
+        </ul>
+        <button id="closeContact"
+            style="width: 100%; margin-top: 20px; border: 1px solid #333; background: none; color: #fff; padding: 15px; border-radius: 50px; cursor: pointer; font-weight: 700;">Cerrar</button>
+    </div>
+
+    <!-- Navigation -->
+    <header id="header">
+        <div class="container">
+            <div class="nav-top">
+                <div class="logo">
+                    <img src="assets/guns-logo.jpg" alt="Gun's Urban Wear">
+                </div>
+                <div class="header-actions">
+                    <div class="nav-links-wrap">
+                        <a href="#new">Nuevos</a>
+                        <a href="#catalog">Catálogo</a>
+                        <span id="contactTrigger" style="cursor: pointer;">Contacto</span>
+                    </div>
+                    <div class="cart-icon-btn" id="openCart">
+                        Carrito <span class="count" id="cartCount">0</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="container">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <h2
+                        style="font-size: 1rem; text-transform: uppercase; letter-spacing: 4px; color: var(--accent-gold); margin-bottom: 15px; font-weight: 700;">
+                        Más que una marca. Un Concepto.</h2>
+                    <h1>Libera tu estilo, viste<br>lo último en tendencia.</h1>
+                    <p>Descubre las últimas colecciones y expresa tu estilo sin esfuerzo. Envíos a todo el país 🇵🇾.
+                        Venta Mayorista y Minorista.</p>
+                    <div class="hero-cta">
+                        <a href="#catalog" class="btn-black">Comprar Ahora →</a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h3>Concepto</h3>
+                            <p>Streetwear que redefines<br>tu estilo propio.</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>100%</h3>
+                            <p>Calidad premium<br>garantizada.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image-wrap">
+                    <img src="assets/vaquero-main.png" alt="Featured Look">
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Grid -->
+        <section class="container section-pad">
+            <div class="section-header">
+                <h2 style="font-size: 2.5rem; font-weight: 800;">Categorías</h2>
+            </div>
+            <div class="category-grid">
+                <div class="cat-card">
+                    <img src="assets/cat-jeans.png" alt="Jeans">
+                    <div class="cat-info">
+                        <h3>Línea Jeans</h3>
+                        <span>Ver Colección</span>
+                    </div>
+                </div>
+                <div class="cat-card">
+                    <img src="assets/cat-cargo.png" alt="Cargo">
+                    <div class="cat-info">
+                        <h3>Serie Cargo</h3>
+                        <span>Explorar Estilos</span>
+                    </div>
+                </div>
+                <div class="cat-card">
+                    <img src="assets/cat-essential.png" alt="Basics">
+                    <div class="cat-info">
+                        <h3>Esenciales</h3>
+                        <span>Básicos Urbanos</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Product Catalog -->
+        <section class="container section-pad" id="catalog">
+            <div class="section-header">
+                <h2 style="font-size: 2.5rem; font-weight: 800;">Catálogo Disponible</h2>
+                <span style="font-weight: 700; color: var(--text-secondary);">15 Items</span>
+            </div>
+            <div class="product-grid" id="productGrid">
+                <!-- Injected by JS -->
+            </div>
+        </section>
+
+        <!-- Promotional Banner Row -->
+        <section class="container">
+            <div class="feature-banner">
+                <div class="feature-box">
+                    <span class="tag">Envíos a todo el país 🇵🇾</span>
+                    <h2>Venta Mayorista<br>y Minorista.</h2>
+                    <p>Más que una marca, somos un concepto que redefine el streetwear paraguayo. Calidad premium
+                        garantizada.</p>
+                    <a href="#catalog" class="btn-black" style="width: fit-content;">Explorar Todo</a>
+                </div>
+                <div class="feature-box image-box">
+                    <img src="assets/vaquero-main.png" alt="Catálogo Gun's Urban Wear">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="assets/guns-logo.jpg" alt="Gun's Urban Wear">
+                </div>
+                <h4 class="footer-slogan">Más que una marca, Un Concepto</h4>
+                <p class="footer-desc">Envíos a todo el país 🇵🇾. Venta Mayorista y
+                    Minorista. Elevando el streetwear en Paraguay con piezas que redefinen el estilo urbano.</p>
+                <div class="social-links">
+                    <a href="https://instagram.com" target="_blank" title="Instagram"><i
+                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com" target="_blank" title="Facebook"><i
+                            class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://wa.me/595984849863" target="_blank" title="WhatsApp"><i
+                            class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <h4>Comprar</h4>
+                <a href="#new">Nuevos Ingresos</a>
+                <a href="#catalog">Más Vendidos</a>
+                <a href="#catalog">Colección Invierno</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Compañía</h4>
+                <a href="#">Nosotros</a>
+                <a href="#">Blog</a>
+                <a href="#">FAQ</a>
+            </div>
+
+            <div class="footer-links">
+                <h4>Soporte</h4>
+                <a href="#">Envíos</a>
+                <a href="#">Tallas</a>
+                <a href="https://wa.me/595984849863">WhatsApp</a>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <div class="footer-copy">
+                <span class="demo-tag">DEMO DE MUESTRA</span>
+            </div>
+            <div class="footer-credits">
+                <span>Desarrollado por <strong>Mathias Galeano</strong></span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/595984849863" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
