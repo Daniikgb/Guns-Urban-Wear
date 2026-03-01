@@ -64,7 +64,7 @@ ul {
 
     /* --- Header / Nav --- */
     header {
-        padding: 10px 0;
+        padding: 12px 0;
         position: fixed;
         top: 0;
         background: rgba(0, 0, 0, 0.97);
@@ -75,7 +75,7 @@ ul {
     .nav-top {
         flex-direction: column;
         align-items: center;
-        gap: 8px;
+        gap: 15px;
         position: relative;
     }
 
@@ -85,26 +85,35 @@ ul {
     }
 
     .logo img {
-        height: 60px;
+        height: 50px;
         width: auto;
         display: block;
     }
 
-    .nav-links-wrap {
-        display: none;
-        /* Ocultos en mobile para no romper el header */
+    .header-actions {
+        position: static;
+        /* Restaurado a static para no romper el flujo de links */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: none;
     }
 
-    .header-actions {
-        position: absolute;
-        right: 16px;
-        top: 50%;
-        transform: translateY(-50%);
-        gap: 0;
+    .nav-links-wrap {
+        display: flex;
+        gap: 20px;
+        font-size: 0.75rem;
+        letter-spacing: 2px;
+        justify-content: center;
+        width: 100%;
     }
 
     .cart-icon-btn {
-        padding: 7px 12px;
+        position: absolute;
+        top: -5px;
+        right: 16px;
+        padding: 6px 12px;
         font-size: 0.7rem;
         gap: 6px;
     }
