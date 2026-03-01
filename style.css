@@ -129,17 +129,33 @@ ul {
     .hero-text {
         padding-right: 0;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-text h2 {
+        display: none;
     }
 
     .hero-text h1 {
-        font-size: clamp(2rem, 9vw, 3rem);
-        margin-bottom: 16px;
+        font-size: clamp(2.2rem, 9vw, 3rem);
+        margin-bottom: 20px;
+        line-height: 1.15;
+    }
+
+    .hero-text h1 br {
+        display: none;
+        /* Quitamos el salto forzado en mobile */
     }
 
     .hero-text p {
         font-size: 0.95rem;
-        margin-bottom: 24px;
-        max-width: 100%;
+        margin-bottom: 28px;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.5;
     }
 
     .hero-cta {

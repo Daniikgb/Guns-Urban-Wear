@@ -88,15 +88,15 @@ function updateCartUI() {
         cartItemsList.innerHTML = '<p style="text-align: center; color: var(--text-secondary); margin-top: 50px;">Tu carrito está vacío.</p>';
     } else {
         cartItemsList.innerHTML = cart.map(item => `
-            <div style="display: grid; grid-template-columns: 80px 1fr auto; gap: 20px; align-items: center; margin-bottom: 25px;">
-                <div style="background: #111; border-radius: 12px; padding: 10px;">
-                    <img src="${item.img}" style="width: 100%; height: 80px; object-fit: contain;">
+            <div style="display: grid; grid-template-columns: 70px minmax(0, 1fr) auto; gap: 15px; align-items: center; margin-bottom: 20px; width: 100%;">
+                <div style="background: #111; border-radius: 12px; padding: 8px; display: flex; align-items: center; justify-content: center;">
+                    <img src="${item.img}" style="width: 100%; height: 60px; object-fit: contain;">
                 </div>
-                <div>
-                    <h4 style="font-size: 0.9rem; margin-bottom: 5px;">${item.name}</h4>
+                <div style="overflow: hidden;">
+                    <h4 style="font-size: 0.85rem; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${item.name}</h4>
                     <p style="font-size: 0.8rem; color: var(--text-secondary);">${item.quantity}x Gs. ${item.price.toLocaleString('es-PY')}</p>
                 </div>
-                <span style="color: #ff4d4d; cursor: pointer; font-weight: 700; font-size: 0.7rem;" onclick="removeFromCart(${item.id})">ELIMINAR</span>
+                <span style="color: #ff4d4d; cursor: pointer; font-weight: 700; font-size: 0.65rem;" onclick="removeFromCart(${item.id})">ELIMINAR</span>
             </div>
         `).join('');
     }
