@@ -15,8 +15,8 @@
 }
 
 html {
-    overflow-x: hidden;
-    max-width: 100%;
+    overflow-x: clip;
+    width: 100%;
 }
 
 * {
@@ -30,7 +30,8 @@ body {
     color: var(--text-primary);
     font-family: 'Outfit', sans-serif;
     line-height: 1.4;
-    overflow-x: hidden;
+    overflow-x: clip;
+    width: 100%;
 }
 
 a {
@@ -168,6 +169,14 @@ ul {
 
     .cat-info h3 {
         font-size: 1.3rem;
+        transform: translateY(0);
+        /* sin hover en mobile, siempre visible */
+    }
+
+    .cat-info span {
+        opacity: 1;
+        /* siempre visible en mobile */
+        transform: translateY(0);
     }
 
     /* --- Product Grid --- */
@@ -298,6 +307,12 @@ ul {
     }
 }
 
+/* Espaciado entre secciones en mobile */
+@media (max-width: 768px) {
+    main>section {
+        margin-bottom: 40px;
+    }
+}
 
 
 /* Header */
@@ -533,7 +548,7 @@ header {
 /* Product Cards (Clean Format) */
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 30px;
 }
 

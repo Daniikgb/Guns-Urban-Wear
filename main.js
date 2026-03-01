@@ -109,11 +109,11 @@ function toggleCart(show) {
     if (show) {
         cartDrawer.classList.add('active');
         cartOverlay.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflowY = 'hidden';
     } else {
         cartDrawer.classList.remove('active');
         cartOverlay.classList.remove('active');
-        document.body.style.overflow = 'auto';
+        document.body.style.overflowY = 'auto';
     }
 }
 
@@ -142,11 +142,11 @@ function setupEventListeners() {
         if (show) {
             contactModal.classList.add('active');
             contactOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflowY = 'hidden';
         } else {
             contactModal.classList.remove('active');
             contactOverlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
+            document.body.style.overflowY = 'auto';
         }
     }
 
