@@ -91,12 +91,8 @@ ul {
     }
 
     .nav-links-wrap {
-        display: flex;
-        gap: 20px;
-        font-size: 0.65rem;
-        letter-spacing: 2px;
-        justify-content: center;
-        width: 100%;
+        display: none;
+        /* Ocultos en mobile para no romper el header */
     }
 
     .header-actions {
@@ -253,7 +249,6 @@ ul {
     /* --- Cart Drawer --- */
     .cart-drawer {
         width: 100%;
-        right: -100%;
         padding: 30px 20px;
     }
 
@@ -713,18 +708,19 @@ header {
 .cart-drawer {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
+    transform: translateX(100%);
     width: 450px;
     height: 100vh;
     background: var(--bg-surface);
     z-index: 2000;
-    transition: 0.5s ease;
+    transition: transform 0.5s ease;
     padding: 40px;
     box-shadow: -20px 0 50px rgba(0, 0, 0, 0.5);
 }
 
 .cart-drawer.active {
-    right: 0;
+    transform: translateX(0);
 }
 
 .cart-overlay {
